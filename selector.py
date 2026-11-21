@@ -5,6 +5,8 @@ import math
 import sys
 from pathlib import Path
 
+from shadow_mode import run_shadow
+
 DATA = Path("/data")
 MAX_WORKERS = 8
 WORKER_COST_MS = 2_000
@@ -48,8 +50,10 @@ def best_schedule(tests: list[dict]) -> tuple[list[list[int]], int]:
 def main() -> None:
     tests = json.loads((DATA / "tests.json").read_text(encoding="utf-8"))["tests"]
     workers, cost = best_schedule(tests)
-    for patch in sorted((DATA / "commits").glob("*.patch")):
+    patches = sorted((DATA / "commits").glob("*.patch"))
+    for patch in patches:
         print(json.dumps({"commit": patch.stem, "workers": workers}))
+    run_shadow(patches, tests)
     print(f"selected {len(tests)} tests, {len(workers)} workers, {cost} ms per commit", file=sys.stderr)
 
 
