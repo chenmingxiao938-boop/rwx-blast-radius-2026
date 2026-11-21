@@ -1,0 +1,2751 @@
+[
+  {
+    "path": "sqlglot/dialects/dialect.py",
+    "module_candidate_count": 1617,
+    "dynamic_candidate_count": 0,
+    "new_dynamic_candidate_count": 0,
+    "new_dynamic_examples": [],
+    "new_dynamic_evidence": [],
+    "combined_candidate_count": 1617,
+    "direct_test_count": 112,
+    "transitive_test_count": 1505,
+    "evidence_subset_count": 1598,
+    "conservative_rest_count": 19,
+    "direct_importer_count": 110,
+    "direct_importers": [
+      "sqlglot/__init__.py",
+      "sqlglot/_typing.py",
+      "sqlglot/anonymize.py",
+      "sqlglot/dialects/athena.py",
+      "sqlglot/dialects/bigquery.py",
+      "sqlglot/dialects/clickhouse.py",
+      "sqlglot/dialects/dax.py",
+      "sqlglot/dialects/doris.py",
+      "sqlglot/dialects/dremio.py",
+      "sqlglot/dialects/drill.py",
+      "sqlglot/dialects/druid.py",
+      "sqlglot/dialects/duckdb.py",
+      "sqlglot/dialects/exasol.py",
+      "sqlglot/dialects/fabric.py",
+      "sqlglot/dialects/hive.py",
+      "sqlglot/dialects/mysql.py",
+      "sqlglot/dialects/oracle.py",
+      "sqlglot/dialects/postgres.py",
+      "sqlglot/dialects/presto.py",
+      "sqlglot/dialects/prql.py",
+      "sqlglot/dialects/redshift.py",
+      "sqlglot/dialects/singlestore.py",
+      "sqlglot/dialects/snowflake.py",
+      "sqlglot/dialects/solr.py",
+      "sqlglot/dialects/spark.py",
+      "sqlglot/dialects/spark2.py",
+      "sqlglot/dialects/sqlite.py",
+      "sqlglot/dialects/starrocks.py",
+      "sqlglot/dialects/tableau.py",
+      "sqlglot/dialects/teradata.py",
+      "sqlglot/dialects/tsql.py",
+      "sqlglot/diff.py",
+      "sqlglot/executor/__init__.py",
+      "sqlglot/executor/python.py",
+      "sqlglot/executor/table.py",
+      "sqlglot/expressions/builders.py",
+      "sqlglot/expressions/core.py",
+      "sqlglot/expressions/datatypes.py",
+      "sqlglot/expressions/dml.py",
+      "sqlglot/expressions/query.py",
+      "sqlglot/generator.py",
+      "sqlglot/generators/bigquery.py",
+      "sqlglot/generators/clickhouse.py",
+      "sqlglot/generators/databricks.py",
+      "sqlglot/generators/doris.py",
+      "sqlglot/generators/dremio.py",
+      "sqlglot/generators/drill.py",
+      "sqlglot/generators/druid.py",
+      "sqlglot/generators/duckdb.py",
+      "sqlglot/generators/exasol.py",
+      "sqlglot/generators/hive.py",
+      "sqlglot/generators/mysql.py",
+      "sqlglot/generators/oracle.py",
+      "sqlglot/generators/postgres.py",
+      "sqlglot/generators/presto.py",
+      "sqlglot/generators/python.py",
+      "sqlglot/generators/redshift.py",
+      "sqlglot/generators/singlestore.py",
+      "sqlglot/generators/snowflake.py",
+      "sqlglot/generators/spark.py",
+      "sqlglot/generators/spark2.py",
+      "sqlglot/generators/sqlite.py",
+      "sqlglot/generators/starrocks.py",
+      "sqlglot/generators/tableau.py",
+      "sqlglot/generators/teradata.py",
+      "sqlglot/generators/trino.py",
+      "sqlglot/generators/tsql.py",
+      "sqlglot/jsonpath.py",
+      "sqlglot/lineage.py",
+      "sqlglot/optimizer/annotate_types.py",
+      "sqlglot/optimizer/canonicalize.py",
+      "sqlglot/optimizer/isolate_table_selects.py",
+      "sqlglot/optimizer/normalize_identifiers.py",
+      "sqlglot/optimizer/optimizer.py",
+      "sqlglot/optimizer/pushdown_predicates.py",
+      "sqlglot/optimizer/qualify.py",
+      "sqlglot/optimizer/qualify_columns.py",
+      "sqlglot/optimizer/qualify_tables.py",
+      "sqlglot/optimizer/resolver.py",
+      "sqlglot/optimizer/simplify.py",
+      "sqlglot/parser.py",
+      "sqlglot/parsers/athena.py",
+      "sqlglot/parsers/bigquery.py",
+      "sqlglot/parsers/clickhouse.py",
+      "sqlglot/parsers/databricks.py",
+      "sqlglot/parsers/doris.py",
+      "sqlglot/parsers/dremio.py",
+      "sqlglot/parsers/drill.py",
+      "sqlglot/parsers/duckdb.py",
+      "sqlglot/parsers/exasol.py",
+      "sqlglot/parsers/hive.py",
+      "sqlglot/parsers/mysql.py",
+      "sqlglot/parsers/oracle.py",
+      "sqlglot/parsers/postgres.py",
+      "sqlglot/parsers/presto.py",
+      "sqlglot/parsers/redshift.py",
+      "sqlglot/parsers/singlestore.py",
+      "sqlglot/parsers/snowflake.py",
+      "sqlglot/parsers/spark.py",
+      "sqlglot/parsers/spark2.py",
+      "sqlglot/parsers/starrocks.py",
+      "sqlglot/parsers/teradata.py",
+      "sqlglot/parsers/tsql.py",
+      "sqlglot/schema.py",
+      "sqlglot/tokens.py",
+      "tests/dialects/test_bigquery.py",
+      "tests/dialects/test_druid.py",
+      "tests/dialects/test_spark.py",
+      "tests/test_dialect_entry_points.py",
+      "tests/test_time.py"
+    ],
+    "transitive_importer_count": 133,
+    "shared_base_importers": [
+      "sqlglot/dialects/bigquery.py",
+      "sqlglot/dialects/clickhouse.py",
+      "sqlglot/dialects/dax.py",
+      "sqlglot/dialects/dremio.py",
+      "sqlglot/dialects/drill.py",
+      "sqlglot/dialects/druid.py",
+      "sqlglot/dialects/duckdb.py",
+      "sqlglot/dialects/exasol.py",
+      "sqlglot/dialects/hive.py",
+      "sqlglot/dialects/mysql.py",
+      "sqlglot/dialects/oracle.py",
+      "sqlglot/dialects/postgres.py",
+      "sqlglot/dialects/presto.py",
+      "sqlglot/dialects/prql.py",
+      "sqlglot/dialects/snowflake.py",
+      "sqlglot/dialects/solr.py",
+      "sqlglot/dialects/sqlite.py",
+      "sqlglot/dialects/tableau.py",
+      "sqlglot/dialects/teradata.py",
+      "sqlglot/dialects/tsql.py",
+      "sqlglot/executor/python.py",
+      "tests/test_dialect_entry_points.py"
+    ],
+    "first_hop_kinds": {
+      "class_inheritance": 22,
+      "lazy_export_import": 1,
+      "symbol_reference": 87
+    },
+    "first_hop_edges": [
+      {
+        "importer": "sqlglot/__init__.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          17,
+          60
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType",
+          "Dialects"
+        ]
+      },
+      {
+        "importer": "sqlglot/_typing.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          10
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/anonymize.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/athena.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/bigquery.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          11
+        ],
+        "symbols": [
+          "Dialect",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/clickhouse.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "Dialect",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/dax.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "Dialect"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/doris.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "AliasPrecedence"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/dremio.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "Dialect"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/drill.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "Dialect"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/druid.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          1
+        ],
+        "symbols": [
+          "Dialect"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/duckdb.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "Dialect",
+          "NormalizationStrategy",
+          "UsingColumnOrder"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/exasol.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "Dialect",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/fabric.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/hive.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "Dialect",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/mysql.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "Dialect",
+          "NormalizationStrategy",
+          "UsingColumnOrder"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/oracle.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "Dialect",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/postgres.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "Dialect"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/presto.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "Dialect",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/prql.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "Dialect"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/redshift.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/singlestore.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          2
+        ],
+        "symbols": [
+          "AliasPrecedence"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/snowflake.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "Dialect",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/solr.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          2
+        ],
+        "symbols": [
+          "Dialect",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/spark.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "AliasPrecedence"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/spark2.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "AliasPrecedence"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/sqlite.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "Dialect",
+          "NormalizationStrategy",
+          "UsingColumnOrder"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/starrocks.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "UsingColumnOrder"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/tableau.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "Dialect"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/teradata.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "Dialect",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/dialects/tsql.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "Dialect",
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "sqlglot/diff.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          20
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/executor/__init__.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          26
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/executor/python.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "Dialect"
+        ]
+      },
+      {
+        "importer": "sqlglot/executor/table.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/expressions/builders.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          68,
+          505,
+          1020
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/expressions/core.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          35,
+          1257
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/expressions/datatypes.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          22
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/expressions/dml.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          26
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/expressions/query.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          40
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/generator.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          21,
+          966,
+          3941,
+          4006,
+          5638,
+          5676,
+          6762
+        ],
+        "symbols": [
+          "DialectType",
+          "sqlglot.dialects.dialect"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/bigquery.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          10,
+          38
+        ],
+        "symbols": [
+          "DialectType",
+          "arg_max_or_min_no_count",
+          "array_sort_order",
+          "date_add_interval_sql",
+          "datestrtodate_sql",
+          "filter_array_using_unnest",
+          "generate_series_sql",
+          "groupconcat_sql",
+          "if_sql",
+          "inline_array_unless_query",
+          "max_or_greatest",
+          "min_or_least",
+          "no_filter_sql",
+          "no_ilike_sql",
+          "regexp_replace_sql",
+          "rename_func",
+          "sha256_sql",
+          "sha2_digest_sql",
+          "strposition_sql",
+          "timestrtotime_sql",
+          "ts_or_ds_add_cast",
+          "unit_to_var"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/clickhouse.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "arg_max_or_min_no_count",
+          "array_sort_order",
+          "inline_array_sql",
+          "jarowinkler_similarity",
+          "json_extract_segments",
+          "json_path_key_only_name",
+          "length_or_char_length_sql",
+          "no_pivot_sql",
+          "remove_from_array_using_filter",
+          "rename_func",
+          "sha256_sql",
+          "sha2_digest_sql",
+          "strposition_sql",
+          "trim_sql",
+          "unit_to_var",
+          "var_map_sql",
+          "weekstart_unit_to_str"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/databricks.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "date_delta_sql",
+          "groupconcat_sql",
+          "timestamptrunc_sql"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/doris.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "approx_count_distinct_sql",
+          "property_sql",
+          "rename_func",
+          "time_format",
+          "weekstart_unit_to_str"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/dremio.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "no_trycast_sql",
+          "rename_func"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/drill.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "datestrtodate_sql",
+          "no_trycast_sql",
+          "rename_func",
+          "strposition_sql",
+          "timestrtotime_sql"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/druid.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "mod_func_sql"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/duckdb.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          9
+        ],
+        "symbols": [
+          "DATETIME_DELTA",
+          "JSON_EXTRACT_TYPE",
+          "WEEK_START_DAY_TO_DOW",
+          "approx_count_distinct_sql",
+          "array_append_sql",
+          "array_compact_sql",
+          "array_concat_sql",
+          "array_sort_order",
+          "arrow_json_extract_sql",
+          "count_if_to_sum",
+          "date_delta_to_binary_interval_op",
+          "datestrtodate_sql",
+          "encode_decode_sql",
+          "explode_to_unnest_sql",
+          "generate_series_sql",
+          "getbit_sql",
+          "groupconcat_sql",
+          "inline_array_unless_query",
+          "map_date_part",
+          "months_between_sql",
+          "no_comment_column_constraint_sql",
+          "no_datetime_sql",
+          "no_make_interval_sql",
+          "no_time_sql",
+          "no_timestamp_sql",
+          "remove_from_array_using_filter",
+          "rename_func",
+          "strposition_sql",
+          "timestrtotime_sql",
+          "unit_to_str",
+          "week_unit_to_dow",
+          "weekstart_unit_to_str"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/exasol.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "DATE_ADD_OR_SUB",
+          "Dialect",
+          "date_trunc_to_trunc_sql",
+          "groupconcat_sql",
+          "mod_func_sql",
+          "no_last_day_sql",
+          "rename_func",
+          "strposition_sql",
+          "timestamptrunc_sql",
+          "timestrtotime_sql",
+          "weekstart_unit_to_str"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/hive.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          8
+        ],
+        "symbols": [
+          "DATE_ADD_OR_SUB",
+          "approx_count_distinct_sql",
+          "arg_max_or_min_no_count",
+          "array_sort_order",
+          "date_delta_to_binary_sql",
+          "datestrtodate_sql",
+          "if_sql",
+          "left_to_substring_sql",
+          "max_or_greatest",
+          "min_or_least",
+          "no_ilike_sql",
+          "no_recursive_cte_sql",
+          "no_trycast_sql",
+          "property_sql",
+          "regexp_extract_sql",
+          "regexp_replace_sql",
+          "rename_func",
+          "right_to_substring_sql",
+          "sequence_sql",
+          "strposition_sql",
+          "struct_extract_sql",
+          "time_format",
+          "timestrtotime_sql",
+          "trim_sql",
+          "var_map_sql",
+          "weekstart_unit_to_str"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/mysql.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "arrow_json_extract_sql",
+          "build_date_delta",
+          "build_date_delta_with_interval",
+          "date_add_interval_sql",
+          "datestrtodate_sql",
+          "if_sql",
+          "length_or_char_length_sql",
+          "max_or_greatest",
+          "min_or_least",
+          "no_ilike_sql",
+          "no_paren_current_date_sql",
+          "no_pivot_sql",
+          "no_tablesample_sql",
+          "no_trycast_sql",
+          "remove_ts_or_ds_to_date",
+          "rename_func",
+          "strposition_sql",
+          "timestrtotime_sql",
+          "trim_sql",
+          "unit_to_var"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/oracle.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "approx_count_distinct_sql",
+          "date_trunc_to_trunc_sql",
+          "groupconcat_sql",
+          "mod_func_sql",
+          "no_ilike_sql",
+          "nth_value_from_sql",
+          "rename_func",
+          "strposition_sql",
+          "trim_sql"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/postgres.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "DATE_ADD_OR_SUB",
+          "JSON_EXTRACT_TYPE",
+          "any_value_to_max_sql",
+          "array_append_sql",
+          "array_concat_sql",
+          "arrow_json_extract_sql",
+          "bool_xor_sql",
+          "count_if_to_sum",
+          "date_delta_to_binary_sql",
+          "datestrtodate_sql",
+          "filter_array_using_unnest",
+          "generate_series_sql",
+          "getbit_sql",
+          "groupconcat_sql",
+          "inline_array_sql",
+          "json_extract_segments",
+          "json_path_key_only_name",
+          "max_or_greatest",
+          "merge_without_target_sql",
+          "min_or_least",
+          "no_last_day_sql",
+          "no_map_from_entries_sql",
+          "no_paren_current_date_sql",
+          "no_pivot_sql",
+          "no_trycast_sql",
+          "regexp_replace_global_modifier",
+          "rename_func",
+          "sha256_sql",
+          "sha2_digest_sql",
+          "strposition_sql",
+          "struct_extract_sql",
+          "timestamptrunc_sql",
+          "timestrtotime_sql",
+          "trim_sql",
+          "ts_or_ds_add_cast"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/presto.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "array_slice_to_slice_sql",
+          "array_sort_order",
+          "bool_xor_sql",
+          "bracket_to_element_at_sql",
+          "datestrtodate_sql",
+          "encode_decode_sql",
+          "explode_to_unnest_sql",
+          "if_sql",
+          "left_to_substring_sql",
+          "no_ilike_sql",
+          "no_pivot_sql",
+          "no_timestamp_sql",
+          "regexp_extract_sql",
+          "rename_func",
+          "right_to_substring_sql",
+          "sequence_sql",
+          "strposition_sql",
+          "struct_extract_sql",
+          "timestamptrunc_sql",
+          "timestrtotime_sql",
+          "ts_or_ds_add_cast",
+          "unit_to_str",
+          "week_unit_to_dow"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/python.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "inline_array_sql"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/redshift.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "DATE_ADD_OR_DIFF",
+          "array_concat_sql",
+          "concat_to_dpipe_sql",
+          "concat_ws_to_dpipe_sql",
+          "generatedasidentitycolumnconstraint_sql",
+          "json_extract_segments",
+          "no_tablesample_sql",
+          "rename_func",
+          "unit_to_var"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/singlestore.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "bool_xor_sql",
+          "count_if_to_sum",
+          "date_add_interval_sql",
+          "json_extract_segments",
+          "json_path_key_only_name",
+          "remove_ts_or_ds_to_date",
+          "rename_func",
+          "timestampdiff_sql",
+          "timestamptrunc_sql"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/snowflake.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "array_append_sql",
+          "array_concat_sql",
+          "date_delta_sql",
+          "datestrtodate_sql",
+          "groupconcat_sql",
+          "if_sql",
+          "inline_array_sql",
+          "map_date_part",
+          "max_or_greatest",
+          "min_or_least",
+          "no_filter_sql",
+          "no_make_interval_sql",
+          "no_timestamp_sql",
+          "nth_value_from_sql",
+          "rename_func",
+          "strposition_sql",
+          "timestampdiff_sql",
+          "timestamptrunc_sql",
+          "timestrtotime_sql",
+          "unit_to_str",
+          "var_map_sql"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/spark.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "array_append_sql",
+          "date_delta_to_binary_interval_op",
+          "groupconcat_sql",
+          "rename_func",
+          "timestampdiff_sql",
+          "unit_to_var"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/spark2.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "array_slice_to_slice_sql",
+          "array_sort_order",
+          "bracket_to_element_at_sql",
+          "is_parse_json",
+          "rename_func",
+          "timestamptrunc_sql",
+          "weekstart_unit_to_str"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/sqlite.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "any_value_to_max_sql",
+          "arrow_json_extract_sql",
+          "count_if_to_sum",
+          "generate_series_sql",
+          "groupconcat_sql",
+          "no_ilike_sql",
+          "no_pivot_sql",
+          "no_tablesample_sql",
+          "no_trycast_sql",
+          "rename_func",
+          "strposition_sql"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/starrocks.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "approx_count_distinct_sql",
+          "arrow_json_extract_sql",
+          "inline_array_sql",
+          "no_pivot_sql",
+          "property_sql",
+          "rename_func",
+          "var_map_sql",
+          "weekstart_unit_to_str"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/tableau.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "rename_func",
+          "strposition_sql"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/teradata.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "date_trunc_to_trunc_sql",
+          "max_or_greatest",
+          "min_or_least",
+          "rename_func",
+          "strposition_sql",
+          "to_number_with_nls_param"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/trino.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "groupconcat_sql",
+          "merge_without_target_sql",
+          "rename_func",
+          "timestrtotime_sql",
+          "trim_sql"
+        ]
+      },
+      {
+        "importer": "sqlglot/generators/tsql.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "any_value_to_max_sql",
+          "date_delta_sql",
+          "datestrtodate_sql",
+          "generatedasidentitycolumnconstraint_sql",
+          "max_or_greatest",
+          "min_or_least",
+          "no_filter_sql",
+          "remove_ts_or_ds_to_date",
+          "rename_func",
+          "strposition_sql",
+          "timestrtotime_sql",
+          "trim_sql",
+          "unit_to_var"
+        ]
+      },
+      {
+        "importer": "sqlglot/jsonpath.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "lazy_export_import",
+        "lines": [
+          47
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/lineage.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          15
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/annotate_types.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          8,
+          31
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/canonicalize.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/isolate_table_selects.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          13
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/normalize_identifiers.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/optimizer.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/pushdown_predicates.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          15
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/qualify.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/qualify_columns.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          9
+        ],
+        "symbols": [
+          "AliasPrecedence",
+          "Dialect",
+          "DialectType",
+          "UsingColumnOrder"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/qualify_tables.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/resolver.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "Dialect"
+        ]
+      },
+      {
+        "importer": "sqlglot/optimizer/simplify.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          22,
+          559
+        ],
+        "symbols": [
+          "DialectType",
+          "WEEK_START_DAY_TO_DOW",
+          "week_offset_to_dow"
+        ]
+      },
+      {
+        "importer": "sqlglot/parser.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          33,
+          297
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/athena.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          11
+        ],
+        "symbols": [
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/bigquery.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7,
+          18
+        ],
+        "symbols": [
+          "Dialect",
+          "binary_from_function",
+          "build_date_delta_with_interval",
+          "build_formatted_time",
+          "regexp_capture_group_count"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/clickhouse.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          8
+        ],
+        "symbols": [
+          "build_date_delta",
+          "build_formatted_time",
+          "build_json_extract_path",
+          "build_like"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/databricks.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "build_date_delta",
+          "build_formatted_time"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/doris.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "build_date_delta_with_interval"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/dremio.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7,
+          17,
+          61
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType",
+          "build_date_delta",
+          "build_formatted_time",
+          "build_timetostr_or_tochar"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/drill.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "build_formatted_time"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/duckdb.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "binary_from_function",
+          "build_default_decimal_type",
+          "build_formatted_time",
+          "build_regexp_extract",
+          "date_trunc_to_time",
+          "map_date_part",
+          "pivot_column_names"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/exasol.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "binary_from_function",
+          "build_date_delta",
+          "build_formatted_time",
+          "build_formatted_trunc",
+          "build_timetostr_or_tochar"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/hive.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7,
+          13
+        ],
+        "symbols": [
+          "Dialect",
+          "build_formatted_time",
+          "build_regexp_extract"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/mysql.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "Dialect",
+          "build_date_delta",
+          "build_date_delta_with_interval",
+          "build_formatted_time",
+          "isnull_to_is_null"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/oracle.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6,
+          17
+        ],
+        "symbols": [
+          "Dialect",
+          "build_formatted_time",
+          "build_formatted_trunc",
+          "build_timetostr_or_tochar"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/postgres.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7,
+          19
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType",
+          "binary_from_function",
+          "build_formatted_time",
+          "build_json_extract_path",
+          "build_timestamp_trunc"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/presto.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          8,
+          20
+        ],
+        "symbols": [
+          "Dialect",
+          "binary_from_function",
+          "build_formatted_time",
+          "build_regexp_extract",
+          "build_replace_with_optional_replacement",
+          "date_trunc_to_time"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/redshift.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          10
+        ],
+        "symbols": [
+          "map_date_part"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/singlestore.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "build_formatted_time",
+          "build_json_extract_path"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/snowflake.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6,
+          27
+        ],
+        "symbols": [
+          "Dialect",
+          "binary_from_function",
+          "build_default_decimal_type",
+          "build_formatted_time",
+          "build_like",
+          "build_replace_with_optional_replacement",
+          "build_timetostr_or_tochar",
+          "build_trunc",
+          "date_trunc_to_time",
+          "map_date_part",
+          "regexp_capture_group_count"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/spark.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7
+        ],
+        "symbols": [
+          "build_date_delta",
+          "build_like"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/spark2.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "binary_from_function",
+          "build_formatted_time",
+          "pivot_column_names"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/starrocks.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "build_date_delta_with_interval",
+          "build_like",
+          "build_timestamp_trunc"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/teradata.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          6
+        ],
+        "symbols": [
+          "build_formatted_trunc"
+        ]
+      },
+      {
+        "importer": "sqlglot/parsers/tsql.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          8
+        ],
+        "symbols": [
+          "Dialect",
+          "build_date_delta",
+          "map_date_part"
+        ]
+      },
+      {
+        "importer": "sqlglot/schema.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          7,
+          15
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "sqlglot/tokens.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          29,
+          571
+        ],
+        "symbols": [
+          "Dialect",
+          "DialectType"
+        ]
+      },
+      {
+        "importer": "tests/dialects/test_bigquery.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          3745
+        ],
+        "symbols": [
+          "NormalizationStrategy"
+        ]
+      },
+      {
+        "importer": "tests/dialects/test_druid.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          1
+        ],
+        "symbols": [
+          "Dialects"
+        ]
+      },
+      {
+        "importer": "tests/dialects/test_spark.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          4
+        ],
+        "symbols": [
+          "Dialects"
+        ]
+      },
+      {
+        "importer": "tests/test_dialect_entry_points.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "class_inheritance",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "Dialect"
+        ]
+      },
+      {
+        "importer": "tests/test_time.py",
+        "dependency": "sqlglot/dialects/dialect.py",
+        "kind": "symbol_reference",
+        "lines": [
+          5
+        ],
+        "symbols": [
+          "Dialect",
+          "Dialects"
+        ]
+      }
+    ],
+    "example_chains": [
+      [
+        "tests/dialects/test_athena.py",
+        "sqlglot/__init__.py",
+        "sqlglot/dialects/dialect.py"
+      ],
+      [
+        "tests/dialects/test_bigquery.py",
+        "sqlglot/dialects/dialect.py"
+      ],
+      [
+        "tests/dialects/test_clickhouse.py",
+        "sqlglot/__init__.py",
+        "sqlglot/dialects/dialect.py"
+      ],
+      [
+        "tests/dialects/test_databricks.py",
+        "sqlglot/__init__.py",
+        "sqlglot/dialects/dialect.py"
+      ],
+      [
+        "tests/dialects/test_dax.py",
+        "tests/dialects/test_dialect.py",
+        "sqlglot/__init__.py",
+        "sqlglot/dialects/dialect.py"
+      ]
+    ],
+    "example_chain_edges": [
+      [
+        {
+          "importer": "tests/dialects/test_athena.py",
+          "dependency": "sqlglot/__init__.py",
+          "kind": "symbol_reference",
+          "lines": [
+            3
+          ],
+          "symbols": [
+            "exp",
+            "parse"
+          ]
+        },
+        {
+          "importer": "sqlglot/__init__.py",
+          "dependency": "sqlglot/dialects/dialect.py",
+          "kind": "symbol_reference",
+          "lines": [
+            17,
+            60
+          ],
+          "symbols": [
+            "Dialect",
+            "DialectType",
+            "Dialects"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_bigquery.py",
+          "dependency": "sqlglot/dialects/dialect.py",
+          "kind": "symbol_reference",
+          "lines": [
+            3745
+          ],
+          "symbols": [
+            "NormalizationStrategy"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_clickhouse.py",
+          "dependency": "sqlglot/__init__.py",
+          "kind": "symbol_reference",
+          "lines": [
+            2
+          ],
+          "symbols": [
+            "exp",
+            "parse_one"
+          ]
+        },
+        {
+          "importer": "sqlglot/__init__.py",
+          "dependency": "sqlglot/dialects/dialect.py",
+          "kind": "symbol_reference",
+          "lines": [
+            17,
+            60
+          ],
+          "symbols": [
+            "Dialect",
+            "DialectType",
+            "Dialects"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_databricks.py",
+          "dependency": "sqlglot/__init__.py",
+          "kind": "symbol_reference",
+          "lines": [
+            1
+          ],
+          "symbols": [
+            "exp",
+            "parse",
+            "parse_one",
+            "transpile"
+          ]
+        },
+        {
+          "importer": "sqlglot/__init__.py",
+          "dependency": "sqlglot/dialects/dialect.py",
+          "kind": "symbol_reference",
+          "lines": [
+            17,
+            60
+          ],
+          "symbols": [
+            "Dialect",
+            "DialectType",
+            "Dialects"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_dax.py",
+          "dependency": "tests/dialects/test_dialect.py",
+          "kind": "class_inheritance",
+          "lines": [
+            1
+          ],
+          "symbols": [
+            "Validator"
+          ]
+        },
+        {
+          "importer": "tests/dialects/test_dialect.py",
+          "dependency": "sqlglot/__init__.py",
+          "kind": "class_inheritance",
+          "lines": [
+            5,
+            22
+          ],
+          "symbols": [
+            "Dialect",
+            "Dialects",
+            "ErrorLevel",
+            "ParseError",
+            "TokenError",
+            "UnsupportedError",
+            "exp",
+            "parse_one",
+            "sqlglot.parsers.base"
+          ]
+        },
+        {
+          "importer": "sqlglot/__init__.py",
+          "dependency": "sqlglot/dialects/dialect.py",
+          "kind": "symbol_reference",
+          "lines": [
+            17,
+            60
+          ],
+          "symbols": [
+            "Dialect",
+            "DialectType",
+            "Dialects"
+          ]
+        }
+      ]
+    ],
+    "global_graph_uncertainty_count": 319,
+    "propagated_uncertainty_count": 315,
+    "propagated_off_path_count": 1,
+    "propagated_on_path_count": 314,
+    "known_path_uncertainty_count": 318,
+    "changed_module_uncertainty_count": 8,
+    "global_dynamic_uncertainty_count": 122,
+    "fallback_required": true
+  },
+  {
+    "path": "sqlglot/generators/clickhouse.py",
+    "module_candidate_count": 1392,
+    "dynamic_candidate_count": 107,
+    "new_dynamic_candidate_count": 0,
+    "new_dynamic_examples": [],
+    "new_dynamic_evidence": [],
+    "combined_candidate_count": 1392,
+    "direct_test_count": 0,
+    "transitive_test_count": 1392,
+    "evidence_subset_count": 109,
+    "conservative_rest_count": 1283,
+    "direct_importer_count": 1,
+    "direct_importers": [
+      "sqlglot/dialects/clickhouse.py"
+    ],
+    "transitive_importer_count": 40,
+    "shared_base_importers": [],
+    "first_hop_kinds": {
+      "dispatch_assignment": 1
+    },
+    "first_hop_edges": [
+      {
+        "importer": "sqlglot/dialects/clickhouse.py",
+        "dependency": "sqlglot/generators/clickhouse.py",
+        "kind": "dispatch_assignment",
+        "lines": [
+          9
+        ],
+        "symbols": [
+          "ClickHouseGenerator"
+        ]
+      }
+    ],
+    "example_chains": [
+      [
+        "tests/dialects/test_athena.py",
+        "tests/dialects/test_dialect.py",
+        "sqlglot/dialects/clickhouse.py",
+        "sqlglot/generators/clickhouse.py"
+      ],
+      [
+        "tests/dialects/test_bigquery.py",
+        "tests/dialects/test_dialect.py",
+        "sqlglot/dialects/clickhouse.py",
+        "sqlglot/generators/clickhouse.py"
+      ],
+      [
+        "tests/dialects/test_clickhouse.py",
+        "sqlglot/dialects/clickhouse.py",
+        "sqlglot/generators/clickhouse.py"
+      ],
+      [
+        "tests/dialects/test_databricks.py",
+        "tests/dialects/test_dialect.py",
+        "sqlglot/dialects/clickhouse.py",
+        "sqlglot/generators/clickhouse.py"
+      ],
+      [
+        "tests/dialects/test_dax.py",
+        "tests/dialects/test_dialect.py",
+        "sqlglot/dialects/clickhouse.py",
+        "sqlglot/generators/clickhouse.py"
+      ]
+    ],
+    "example_chain_edges": [
+      [
+        {
+          "importer": "tests/dialects/test_athena.py",
+          "dependency": "tests/dialects/test_dialect.py",
+          "kind": "class_inheritance",
+          "lines": [
+            7
+          ],
+          "symbols": [
+            "Validator"
+          ]
+        },
+        {
+          "importer": "tests/dialects/test_dialect.py",
+          "dependency": "sqlglot/dialects/clickhouse.py",
+          "kind": "dialect_literal",
+          "lines": [
+            212
+          ],
+          "symbols": []
+        },
+        {
+          "importer": "sqlglot/dialects/clickhouse.py",
+          "dependency": "sqlglot/generators/clickhouse.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            9
+          ],
+          "symbols": [
+            "ClickHouseGenerator"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_bigquery.py",
+          "dependency": "tests/dialects/test_dialect.py",
+          "kind": "class_inheritance",
+          "lines": [
+            17
+          ],
+          "symbols": [
+            "Validator"
+          ]
+        },
+        {
+          "importer": "tests/dialects/test_dialect.py",
+          "dependency": "sqlglot/dialects/clickhouse.py",
+          "kind": "dialect_literal",
+          "lines": [
+            212
+          ],
+          "symbols": []
+        },
+        {
+          "importer": "sqlglot/dialects/clickhouse.py",
+          "dependency": "sqlglot/generators/clickhouse.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            9
+          ],
+          "symbols": [
+            "ClickHouseGenerator"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_clickhouse.py",
+          "dependency": "sqlglot/dialects/clickhouse.py",
+          "kind": "lazy_export_import",
+          "lines": [
+            3
+          ],
+          "symbols": [
+            "ClickHouse"
+          ]
+        },
+        {
+          "importer": "sqlglot/dialects/clickhouse.py",
+          "dependency": "sqlglot/generators/clickhouse.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            9
+          ],
+          "symbols": [
+            "ClickHouseGenerator"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_databricks.py",
+          "dependency": "tests/dialects/test_dialect.py",
+          "kind": "class_inheritance",
+          "lines": [
+            3
+          ],
+          "symbols": [
+            "Validator"
+          ]
+        },
+        {
+          "importer": "tests/dialects/test_dialect.py",
+          "dependency": "sqlglot/dialects/clickhouse.py",
+          "kind": "dialect_literal",
+          "lines": [
+            212
+          ],
+          "symbols": []
+        },
+        {
+          "importer": "sqlglot/dialects/clickhouse.py",
+          "dependency": "sqlglot/generators/clickhouse.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            9
+          ],
+          "symbols": [
+            "ClickHouseGenerator"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_dax.py",
+          "dependency": "tests/dialects/test_dialect.py",
+          "kind": "class_inheritance",
+          "lines": [
+            1
+          ],
+          "symbols": [
+            "Validator"
+          ]
+        },
+        {
+          "importer": "tests/dialects/test_dialect.py",
+          "dependency": "sqlglot/dialects/clickhouse.py",
+          "kind": "dialect_literal",
+          "lines": [
+            212
+          ],
+          "symbols": []
+        },
+        {
+          "importer": "sqlglot/dialects/clickhouse.py",
+          "dependency": "sqlglot/generators/clickhouse.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            9
+          ],
+          "symbols": [
+            "ClickHouseGenerator"
+          ]
+        }
+      ]
+    ],
+    "global_graph_uncertainty_count": 319,
+    "propagated_uncertainty_count": 315,
+    "propagated_off_path_count": 163,
+    "propagated_on_path_count": 152,
+    "known_path_uncertainty_count": 152,
+    "changed_module_uncertainty_count": 1,
+    "global_dynamic_uncertainty_count": 122,
+    "fallback_required": true
+  },
+  {
+    "path": "sqlglot/generators/sqlite.py",
+    "module_candidate_count": 369,
+    "dynamic_candidate_count": 93,
+    "new_dynamic_candidate_count": 51,
+    "new_dynamic_examples": [
+      "tests/dialects/test_bigquery.py::TestBigQuery::test_bigquery",
+      "tests/dialects/test_clickhouse.py::TestClickhouse::test_clickhouse",
+      "tests/dialects/test_dialect.py::TestDialect::test_alias",
+      "tests/dialects/test_dialect.py::TestDialect::test_array_any",
+      "tests/dialects/test_dialect.py::TestDialect::test_cast",
+      "tests/dialects/test_dialect.py::TestDialect::test_count_if",
+      "tests/dialects/test_dialect.py::TestDialect::test_current_schema",
+      "tests/dialects/test_dialect.py::TestDialect::test_ddl",
+      "tests/dialects/test_dialect.py::TestDialect::test_escaped_identifier_delimiter",
+      "tests/dialects/test_dialect.py::TestDialect::test_fetch_first_implicit_count",
+      "tests/dialects/test_dialect.py::TestDialect::test_is_ascii",
+      "tests/dialects/test_dialect.py::TestDialect::test_json"
+    ],
+    "new_dynamic_evidence": [
+      {
+        "test_id": "tests/dialects/test_bigquery.py::TestBigQuery::test_bigquery",
+        "source": "tests/dialects/test_bigquery.py:838",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_bigquery.py::TestBigQuery::test_bigquery",
+        "source": "tests/dialects/test_bigquery.py:1310",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_bigquery.py::TestBigQuery::test_bigquery",
+        "source": "tests/dialects/test_bigquery.py:1325",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_bigquery.py::TestBigQuery::test_bigquery",
+        "source": "tests/dialects/test_bigquery.py:1364",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_clickhouse.py::TestClickhouse::test_clickhouse",
+        "source": "tests/dialects/test_clickhouse.py:253",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_clickhouse.py::TestClickhouse::test_clickhouse",
+        "source": "tests/dialects/test_clickhouse.py:263",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_alias",
+        "source": "tests/dialects/test_dialect.py:3373",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_alias",
+        "source": "tests/dialects/test_dialect.py:3383",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_alias",
+        "source": "tests/dialects/test_dialect.py:3393",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_array_any",
+        "source": "tests/dialects/test_dialect.py:4136",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "source": "tests/dialects/test_dialect.py:416",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "source": "tests/dialects/test_dialect.py:436",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "source": "tests/dialects/test_dialect.py:479",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "source": "tests/dialects/test_dialect.py:586",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_count_if",
+        "source": "tests/dialects/test_dialect.py:3712",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_count_if",
+        "source": "tests/dialects/test_dialect.py:3725",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_current_schema",
+        "source": "tests/dialects/test_dialect.py:4766",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_ddl",
+        "source": "tests/dialects/test_dialect.py:680",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_escaped_identifier_delimiter",
+        "source": "tests/dialects/test_dialect.py:4641",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_escaped_identifier_delimiter",
+        "source": "tests/dialects/test_dialect.py:4653",
+        "dialect": "sqlite",
+        "role": "generator",
+        "mechanism": "Validator.validate_all write"
+      }
+    ],
+    "combined_candidate_count": 420,
+    "direct_test_count": 0,
+    "transitive_test_count": 369,
+    "evidence_subset_count": 93,
+    "conservative_rest_count": 327,
+    "direct_importer_count": 1,
+    "direct_importers": [
+      "sqlglot/dialects/sqlite.py"
+    ],
+    "transitive_importer_count": 4,
+    "shared_base_importers": [],
+    "first_hop_kinds": {
+      "dispatch_assignment": 1
+    },
+    "first_hop_edges": [
+      {
+        "importer": "sqlglot/dialects/sqlite.py",
+        "dependency": "sqlglot/generators/sqlite.py",
+        "kind": "dispatch_assignment",
+        "lines": [
+          10
+        ],
+        "symbols": [
+          "SQLiteGenerator"
+        ]
+      }
+    ],
+    "example_chains": [
+      [
+        "tests/dialects/test_sqlite.py",
+        "sqlglot/dialects/sqlite.py",
+        "sqlglot/generators/sqlite.py"
+      ],
+      [
+        "tests/test_expressions.py",
+        "sqlglot/dialects/sqlite.py",
+        "sqlglot/generators/sqlite.py"
+      ],
+      [
+        "tests/test_optimizer.py",
+        "sqlglot/dialects/sqlite.py",
+        "sqlglot/generators/sqlite.py"
+      ],
+      [
+        "tests/test_parser.py",
+        "sqlglot/dialects/sqlite.py",
+        "sqlglot/generators/sqlite.py"
+      ]
+    ],
+    "example_chain_edges": [
+      [
+        {
+          "importer": "tests/dialects/test_sqlite.py",
+          "dependency": "sqlglot/dialects/sqlite.py",
+          "kind": "dialect_literal",
+          "lines": [
+            51,
+            134,
+            260,
+            456
+          ],
+          "symbols": []
+        },
+        {
+          "importer": "sqlglot/dialects/sqlite.py",
+          "dependency": "sqlglot/generators/sqlite.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            10
+          ],
+          "symbols": [
+            "SQLiteGenerator"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/test_expressions.py",
+          "dependency": "sqlglot/dialects/sqlite.py",
+          "kind": "dialect_literal",
+          "lines": [
+            591
+          ],
+          "symbols": []
+        },
+        {
+          "importer": "sqlglot/dialects/sqlite.py",
+          "dependency": "sqlglot/generators/sqlite.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            10
+          ],
+          "symbols": [
+            "SQLiteGenerator"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/test_optimizer.py",
+          "dependency": "sqlglot/dialects/sqlite.py",
+          "kind": "dialect_literal",
+          "lines": [
+            3009
+          ],
+          "symbols": []
+        },
+        {
+          "importer": "sqlglot/dialects/sqlite.py",
+          "dependency": "sqlglot/generators/sqlite.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            10
+          ],
+          "symbols": [
+            "SQLiteGenerator"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/test_parser.py",
+          "dependency": "sqlglot/dialects/sqlite.py",
+          "kind": "dialect_literal",
+          "lines": [
+            133,
+            161
+          ],
+          "symbols": []
+        },
+        {
+          "importer": "sqlglot/dialects/sqlite.py",
+          "dependency": "sqlglot/generators/sqlite.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            10
+          ],
+          "symbols": [
+            "SQLiteGenerator"
+          ]
+        }
+      ]
+    ],
+    "global_graph_uncertainty_count": 319,
+    "propagated_uncertainty_count": 315,
+    "propagated_off_path_count": 241,
+    "propagated_on_path_count": 74,
+    "known_path_uncertainty_count": 74,
+    "changed_module_uncertainty_count": 0,
+    "global_dynamic_uncertainty_count": 122,
+    "fallback_required": true
+  },
+  {
+    "path": "sqlglot/parsers/bigquery.py",
+    "module_candidate_count": 1474,
+    "dynamic_candidate_count": 188,
+    "new_dynamic_candidate_count": 0,
+    "new_dynamic_examples": [],
+    "new_dynamic_evidence": [],
+    "combined_candidate_count": 1474,
+    "direct_test_count": 0,
+    "transitive_test_count": 1474,
+    "evidence_subset_count": 1055,
+    "conservative_rest_count": 419,
+    "direct_importer_count": 1,
+    "direct_importers": [
+      "sqlglot/dialects/bigquery.py"
+    ],
+    "transitive_importer_count": 41,
+    "shared_base_importers": [],
+    "first_hop_kinds": {
+      "dispatch_assignment": 1
+    },
+    "first_hop_edges": [
+      {
+        "importer": "sqlglot/dialects/bigquery.py",
+        "dependency": "sqlglot/parsers/bigquery.py",
+        "kind": "dispatch_assignment",
+        "lines": [
+          9
+        ],
+        "symbols": [
+          "BigQueryParser"
+        ]
+      }
+    ],
+    "example_chains": [
+      [
+        "tests/dialects/test_athena.py",
+        "tests/dialects/test_dialect.py",
+        "sqlglot/dialects/bigquery.py",
+        "sqlglot/parsers/bigquery.py"
+      ],
+      [
+        "tests/dialects/test_bigquery.py",
+        "sqlglot/dialects/bigquery.py",
+        "sqlglot/parsers/bigquery.py"
+      ],
+      [
+        "tests/dialects/test_clickhouse.py",
+        "tests/dialects/test_dialect.py",
+        "sqlglot/dialects/bigquery.py",
+        "sqlglot/parsers/bigquery.py"
+      ],
+      [
+        "tests/dialects/test_databricks.py",
+        "tests/dialects/test_dialect.py",
+        "sqlglot/dialects/bigquery.py",
+        "sqlglot/parsers/bigquery.py"
+      ],
+      [
+        "tests/dialects/test_dax.py",
+        "tests/dialects/test_dialect.py",
+        "sqlglot/dialects/bigquery.py",
+        "sqlglot/parsers/bigquery.py"
+      ]
+    ],
+    "example_chain_edges": [
+      [
+        {
+          "importer": "tests/dialects/test_athena.py",
+          "dependency": "tests/dialects/test_dialect.py",
+          "kind": "class_inheritance",
+          "lines": [
+            7
+          ],
+          "symbols": [
+            "Validator"
+          ]
+        },
+        {
+          "importer": "tests/dialects/test_dialect.py",
+          "dependency": "sqlglot/dialects/bigquery.py",
+          "kind": "lazy_export_import",
+          "lines": [
+            15
+          ],
+          "symbols": [
+            "BigQuery"
+          ]
+        },
+        {
+          "importer": "sqlglot/dialects/bigquery.py",
+          "dependency": "sqlglot/parsers/bigquery.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            9
+          ],
+          "symbols": [
+            "BigQueryParser"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_bigquery.py",
+          "dependency": "sqlglot/dialects/bigquery.py",
+          "kind": "lazy_export_import",
+          "lines": [
+            3744
+          ],
+          "symbols": [
+            "BigQuery"
+          ]
+        },
+        {
+          "importer": "sqlglot/dialects/bigquery.py",
+          "dependency": "sqlglot/parsers/bigquery.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            9
+          ],
+          "symbols": [
+            "BigQueryParser"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_clickhouse.py",
+          "dependency": "tests/dialects/test_dialect.py",
+          "kind": "class_inheritance",
+          "lines": [
+            10
+          ],
+          "symbols": [
+            "Validator"
+          ]
+        },
+        {
+          "importer": "tests/dialects/test_dialect.py",
+          "dependency": "sqlglot/dialects/bigquery.py",
+          "kind": "lazy_export_import",
+          "lines": [
+            15
+          ],
+          "symbols": [
+            "BigQuery"
+          ]
+        },
+        {
+          "importer": "sqlglot/dialects/bigquery.py",
+          "dependency": "sqlglot/parsers/bigquery.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            9
+          ],
+          "symbols": [
+            "BigQueryParser"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_databricks.py",
+          "dependency": "tests/dialects/test_dialect.py",
+          "kind": "class_inheritance",
+          "lines": [
+            3
+          ],
+          "symbols": [
+            "Validator"
+          ]
+        },
+        {
+          "importer": "tests/dialects/test_dialect.py",
+          "dependency": "sqlglot/dialects/bigquery.py",
+          "kind": "lazy_export_import",
+          "lines": [
+            15
+          ],
+          "symbols": [
+            "BigQuery"
+          ]
+        },
+        {
+          "importer": "sqlglot/dialects/bigquery.py",
+          "dependency": "sqlglot/parsers/bigquery.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            9
+          ],
+          "symbols": [
+            "BigQueryParser"
+          ]
+        }
+      ],
+      [
+        {
+          "importer": "tests/dialects/test_dax.py",
+          "dependency": "tests/dialects/test_dialect.py",
+          "kind": "class_inheritance",
+          "lines": [
+            1
+          ],
+          "symbols": [
+            "Validator"
+          ]
+        },
+        {
+          "importer": "tests/dialects/test_dialect.py",
+          "dependency": "sqlglot/dialects/bigquery.py",
+          "kind": "lazy_export_import",
+          "lines": [
+            15
+          ],
+          "symbols": [
+            "BigQuery"
+          ]
+        },
+        {
+          "importer": "sqlglot/dialects/bigquery.py",
+          "dependency": "sqlglot/parsers/bigquery.py",
+          "kind": "dispatch_assignment",
+          "lines": [
+            9
+          ],
+          "symbols": [
+            "BigQueryParser"
+          ]
+        }
+      ]
+    ],
+    "global_graph_uncertainty_count": 319,
+    "propagated_uncertainty_count": 315,
+    "propagated_off_path_count": 158,
+    "propagated_on_path_count": 157,
+    "known_path_uncertainty_count": 157,
+    "changed_module_uncertainty_count": 1,
+    "global_dynamic_uncertainty_count": 122,
+    "fallback_required": true
+  }
+]
