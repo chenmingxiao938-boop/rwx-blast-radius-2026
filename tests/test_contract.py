@@ -74,16 +74,23 @@ class OutputContractTests(unittest.TestCase):
     def run_selector(self, data):
         # Exercise the existing entry point with its data directory redirected
         # in a fresh process. stdout and stderr remain separate byte streams.
-        return subprocess.run(
-            [sys.executable, "-c",
-             "import sys; from pathlib import Path; import selector; "
-             "selector.DATA = Path(sys.argv[1]); selector.main()", str(data)],
-            cwd=REPOSITORY,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            check=True,
-            timeout=15,
+        try:
+            result = subprocess.run(
+                [sys.executable, "-E", "-B", "-c",
+                 "import sys; from pathlib import Path; import selector; "
+                 "selector.DATA = Path(sys.argv[1]); selector.main()", str(data)],
+                cwd=REPOSITORY,
+                capture_output=True,
+                timeout=15,
+            )
+        except subprocess.TimeoutExpired as error:
+            stderr = (error.stderr or b"").decode("utf-8", errors="replace")
+            self.fail(f"selector timed out after {error.timeout} seconds\nstderr:\n{stderr}")
+        self.assertEqual(
+            result.returncode, 0,
+            f"selector exited unsuccessfully\nstderr:\n{result.stderr.decode('utf-8', errors='replace')}",
         )
+        return result
 
     def test_selector_stdout_obeys_contract_with_stderr_captured_separately(self):
         data = self.make_data()
@@ -94,3 +101,71 @@ class OutputContractTests(unittest.TestCase):
             self.assertLessEqual(len(workers), 8)
             self.assertTrue(all(type(test_id) is int for worker in workers for test_id in worker))
         # Starter diagnostics, when present, must stay off the JSON stream.
+        starter_log = b"selected 3 tests on every commit"
+        if starter_log in result.stdout or starter_log in result.stderr:
+            self.assertIn(starter_log, result.stderr)
+
+    def test_selector_output_with_empty_test_inventory(self):
+        data = self.make_data(times=())
+        self.assert_valid_stdout(self.run_selector(data).stdout, data)
+
+    def test_selector_failure_reports_stderr(self):
+        data = self.make_data()
+        (data / "tests.json").write_bytes(b"{")
+        with self.assertRaisesRegex(AssertionError, r"(?s)stderr:\n.*JSONDecodeError"):
+            self.run_selector(data)
+
+    def test_empty_workers_and_whole_number_json_are_valid(self):
+        data = self.make_data()
+        self.assert_valid_stdout(
+            b'{"commit":"b2","workers":[[2.0],[],[],[],[],[],[],[],[]]}\n'
+            b'{"commit":"a1","workers":[]}', data
+        )
+
+    def test_empty_batch_has_no_stdout(self):
+        data = self.make_data(commits=())
+        self.assert_valid_stdout(self.run_selector(data).stdout, data)
+
+    def test_wrong_shapes_and_test_numbers_are_rejected(self):
+        data = self.make_data(commits=("a1",), times=(1,) * 9)
+        invalid = (
+            b'{"commit":"a1"}',
+            b'{"commit":"a1","workers":[],"extra":0}',
+            b'{"commit":"a1","workers":{}}',
+            b'{"commit":"a1","workers":[0]}',
+            b'{"commit":"a1","workers":[[true]]}',
+            b'{"commit":"a1","workers":[["1"]]}',
+            b'{"commit":"a1","workers":[[1.25]]}',
+            b'{"commit":"a1","workers":[[NaN]]}',
+            b'{"commit":"a1","workers":[[Infinity]]}',
+            b'{"commit":"a1","workers":[[9]]}',
+            b'{"commit":"a1","workers":[[1,1]]}',
+            b'{"commit":"a1","workers":[[1],[1]]}',
+            b'{"commit":"a1","workers":[[0],[1],[2],[3],[4],[5],[6],[7],[8]]}',
+        )
+        for stdout in invalid:
+            with self.subTest(stdout=stdout), self.assertRaises(AssertionError):
+                self.assert_valid_stdout(stdout, data)
+
+    def test_invalid_commit_coverage_and_extra_stdout_are_rejected(self):
+        data = self.make_data(commits=("a1",))
+        answer = b'{"commit":"a1","workers":[]}\n'
+        invalid = (b"", answer * 2, answer.replace(b"a1", b"bad"),
+                   b"DEBUG: loaded tests\n" + answer, answer + b"\n",
+                   b"\xef\xbb\xbf" + answer, answer + b"\xff")
+        for stdout in invalid:
+            with self.subTest(stdout=stdout), self.assertRaises(AssertionError):
+                self.assert_valid_stdout(stdout, data)
+
+    def test_batch_stdout_cap_is_in_bytes(self):
+        data = self.make_data(commits=("café", "b2"))
+        answers = ('{"commit":"café","workers":[]}\n'
+                   '{"commit":"b2","workers":[]}').encode("utf-8")
+        at_limit = b" " * (MAX_STDOUT_BYTES - len(answers)) + answers
+        self.assert_valid_stdout(at_limit, data)
+        with self.assertRaises(AssertionError):
+            self.assert_valid_stdout(b" " + at_limit, data)
+
+
+if __name__ == "__main__":
+    unittest.main()
