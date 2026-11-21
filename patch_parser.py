@@ -31,6 +31,7 @@ class Hunk:
     context: str
     old_changed_lines: tuple[int, ...]
     new_changed_lines: tuple[int, ...]
+    body: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -173,6 +174,7 @@ def _parse_hunk(lines: list[str], index: int) -> tuple[Hunk, int]:
     old_line, new_line = old_start, new_start
     old_changed: list[int] = []
     new_changed: list[int] = []
+    body: list[str] = []
     last_was_body = False
     index += 1
     while old_line < old_start + old_count or new_line < new_start + new_count:
@@ -187,6 +189,7 @@ def _parse_hunk(lines: list[str], index: int) -> tuple[Hunk, int]:
             continue
         if not line:
             raise _Unsupported("unmarked hunk line")
+        body.append(line)
         if line[0] == " ":
             old_line += 1
             new_line += 1
@@ -208,7 +211,7 @@ def _parse_hunk(lines: list[str], index: int) -> tuple[Hunk, int]:
         index += 1
     return Hunk(
         old_start, old_count, new_start, new_count, match[5],
-        tuple(old_changed), tuple(new_changed),
+        tuple(old_changed), tuple(new_changed), tuple(body),
     ), index
 
 

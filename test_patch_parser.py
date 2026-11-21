@@ -284,5 +284,19 @@ unsupported marker
             checked += 1
         self.assertGreater(checked, 100)
 
+    def test_hunk_body_preserves_import_lines_and_context(self):
+        patch = parse_patch("""diff --git a/sqlglot/x.py b/sqlglot/x.py
+--- a/sqlglot/x.py
++++ b/sqlglot/x.py
+@@ -1,3 +1,3 @@
+ from pkg import (
+-    Old,
++    New,
+ )
+""")
+        self.assertFalse(patch.unknown)
+        self.assertEqual(patch.files[0].hunks[0].body, (
+            " from pkg import (", "-    Old,", "+    New,", " )",
+        ))
 if __name__ == "__main__":
     unittest.main()
