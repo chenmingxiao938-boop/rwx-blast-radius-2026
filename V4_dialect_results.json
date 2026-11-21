@@ -1,0 +1,2991 @@
+[
+  {
+    "path": "sqlglot/dialects/materialize.py",
+    "dialects": [
+      "materialize"
+    ],
+    "static_count": 0,
+    "dynamic_count": 10,
+    "new_dynamic_count": 10,
+    "new_dynamic_ids": [
+      "tests/dialects/test_bigquery.py::TestBigQuery::test_byte_strings",
+      "tests/dialects/test_dialect.py::TestDialect::test_between",
+      "tests/dialects/test_dialect.py::TestDialect::test_cast",
+      "tests/dialects/test_dialect.py::TestDialect::test_justify",
+      "tests/dialects/test_dialect.py::TestDialect::test_operators",
+      "tests/dialects/test_dialect.py::TestDialect::test_time",
+      "tests/dialects/test_materialize.py::TestMaterialize::test_array_length",
+      "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+      "tests/dialects/test_spark.py::TestSpark::test_ddl",
+      "tests/test_parser.py::TestParser::test_is_precedence"
+    ],
+    "combined_count": 10,
+    "evidence_count": 92,
+    "evidence_for_new": [
+      {
+        "test_id": "tests/dialects/test_bigquery.py::TestBigQuery::test_byte_strings",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_bigquery.py:189",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_between",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:4837",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_between",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:4867",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_between",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:4884",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_between",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_dialect.py:4837",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:395",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:416",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:436",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:486",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:506",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:526",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:546",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:566",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:586",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_cast",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:606",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_justify",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:4989",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_justify",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:5003",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_justify",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:5017",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_justify",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_dialect.py:4989",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_justify",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_dialect.py:5003",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_justify",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_dialect.py:5017",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_operators",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:2757",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_operators",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:2829",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_operators",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_dialect.py:2674",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_time",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:950",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_time",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:1074",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_time",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:1126",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_time",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:1159",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_time",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:1217",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_time",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:1256",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_time",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:1334",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_time",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_dialect.py:1474",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_time",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_dialect.py:1275",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_time",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_dialect.py:1351",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_array_length",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:8",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_array_length",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:8",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:14",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:14",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:21",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:21",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:28",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:28",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:35",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:35",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:42",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:42",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:49",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:49",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:58",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:59",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:60",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:63",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:66",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:69",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:70",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:71",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:72",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:73",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:74",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:75",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:78",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:79",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:80",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:81",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:82",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_materialize.py:83",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:14",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:21",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:28",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:35",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:42",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:49",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:58",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:59",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:60",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:63",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:66",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:69",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:70",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:71",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:72",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:73",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:74",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:75",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:78",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:79",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:80",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:81",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:82",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_materialize.py::TestMaterialize::test_materialize",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/dialects/test_materialize.py:83",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_spark.py::TestSpark::test_ddl",
+        "dialect": "materialize",
+        "role": "generator",
+        "source": "tests/dialects/test_spark.py:118",
+        "mechanism": "Validator.validate_all write"
+      },
+      {
+        "test_id": "tests/test_parser.py::TestParser::test_is_precedence",
+        "dialect": "materialize",
+        "role": "parser",
+        "source": "tests/test_parser.py:380",
+        "mechanism": "parse_one"
+      }
+    ],
+    "unresolved_count": 1,
+    "global_unresolved_count": 122,
+    "global_unresolved_kinds": {
+      "Computed dialect": 81,
+      "Computed dialect collection": 33,
+      "Dynamic import": 2,
+      "Unknown dialect asdfjasodiufjsd": 1,
+      "Unknown dialect fakedb": 2,
+      "Unknown dialect mydialect": 1,
+      "Unknown dialect myqsl": 1,
+      "Unknown dialect nonexistent": 1
+    },
+    "unresolved_kinds": {
+      "Unmodeled dispatch and indirect consumers have not been excluded": 1
+    },
+    "unresolved_reasons": [
+      "Unmodeled dispatch and indirect consumers have not been excluded"
+    ],
+    "fallback_required": true
+  },
+  {
+    "path": "sqlglot/parsers/bigquery.py",
+    "dialects": [
+      "bigquery"
+    ],
+    "static_count": 1474,
+    "dynamic_count": 188,
+    "new_dynamic_count": 0,
+    "new_dynamic_ids": [],
+    "combined_count": 1474,
+    "evidence_count": 1024,
+    "evidence_for_new": [],
+    "unresolved_count": 1,
+    "global_unresolved_count": 122,
+    "global_unresolved_kinds": {
+      "Computed dialect": 81,
+      "Computed dialect collection": 33,
+      "Dynamic import": 2,
+      "Unknown dialect asdfjasodiufjsd": 1,
+      "Unknown dialect fakedb": 2,
+      "Unknown dialect mydialect": 1,
+      "Unknown dialect myqsl": 1,
+      "Unknown dialect nonexistent": 1
+    },
+    "unresolved_kinds": {
+      "Unmodeled dispatch and indirect consumers have not been excluded": 1
+    },
+    "unresolved_reasons": [
+      "Unmodeled dispatch and indirect consumers have not been excluded"
+    ],
+    "fallback_required": true
+  },
+  {
+    "path": "sqlglot/parsers/singlestore.py",
+    "dialects": [
+      "singlestore"
+    ],
+    "static_count": 0,
+    "dynamic_count": 30,
+    "new_dynamic_count": 30,
+    "new_dynamic_ids": [
+      "tests/dialects/test_dialect.py::TestDialect::test_json_keys",
+      "tests/dialects/test_mysql.py::TestMySQL::test_statistical_aggregates",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_alter",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_byte_strings",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_cast",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_collate_sql",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_column_with_tablename",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_constraints",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_dcolonqmark",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_is_ascii",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_logical",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_match_against",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_national_strings",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_percentile_null_ordering",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_reduce_functions",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_restricted_keywords",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_singlestore",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_time_formatting",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_truncate",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_unicodestring_sql",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+      "tests/dialects/test_singlestore.py::TestSingleStore::test_vector"
+    ],
+    "combined_count": 30,
+    "evidence_count": 315,
+    "evidence_for_new": [
+      {
+        "test_id": "tests/dialects/test_dialect.py::TestDialect::test_json_keys",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_dialect.py:6048",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_mysql.py::TestMySQL::test_statistical_aggregates",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_mysql.py:195",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_alter",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:984",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_alter",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:985",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_alter",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:986",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_byte_strings",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:31",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_byte_strings",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:32",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_cast",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:97",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_cast",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:107",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_cast",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:117",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_cast",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:118",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_cast",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:119",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_cast",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:120",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_cast",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:120",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_collate_sql",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:890",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_collate_sql",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:896",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_column_with_tablename",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:881",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_constraints",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:989",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_constraints",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:989",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_constraints",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:996",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:297",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:300",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:304",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:308",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:312",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:315",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:318",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:322",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:322",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:329",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_date_parts_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:329",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_dcolonqmark",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:1001",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_is_ascii",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:431",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_is_ascii",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:435",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_is_ascii",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:439",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_is_ascii",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:443",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:239",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:240",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:241",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:242",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:242",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:249",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:249",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:256",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:256",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:263",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:264",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:265",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:265",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:272",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:273",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:273",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:280",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:280",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:287",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:287",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:294",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:161",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:162",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:163",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:164",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:168",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:170",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:170",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:178",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:182",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:186",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:190",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:190",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:198",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:203",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:203",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:211",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:215",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:219",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:223",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:227",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_json_extract",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:231",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_logical",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:422",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_logical",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:422",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_match_against",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:901",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_match_against",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:904",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_match_against",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:907",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:338",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:338",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:345",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:348",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:348",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:355",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:355",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:361",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:365",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:365",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:372",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:372",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:379",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:382",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:385",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:385",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:393",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:393",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:403",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:403",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:413",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_math_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:413",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_national_strings",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:59",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_national_strings",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:59",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_percentile_null_ordering",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:36",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_percentile_null_ordering",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:36",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_percentile_null_ordering",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:43",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_percentile_null_ordering",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:43",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_percentile_null_ordering",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:51",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_reduce_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:548",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_reduce_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:548",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_restricted_keywords",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:64",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_restricted_keywords",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:65",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_restricted_keywords",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:66",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_restricted_keywords",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:69",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:912",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:913",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:914",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:915",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:916",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:917",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:918",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:919",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:920",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:921",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:922",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:923",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:924",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:925",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:926",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:927",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:928",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:929",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:930",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:931",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:932",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:933",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:934",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:935",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:936",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:937",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:938",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:939",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:940",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:941",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:942",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:943",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:944",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:945",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:946",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:947",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:948",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:949",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:950",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_show",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:951",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_singlestore",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:10",
+        "mechanism": "parse_one"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_singlestore",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:20",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_singlestore",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:21",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_singlestore",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:22",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_singlestore",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:23",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_singlestore",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:24",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_singlestore",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:26",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_singlestore",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:27",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_singlestore",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:28",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:449",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:449",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:456",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:457",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:457",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:464",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:464",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:472",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:472",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:479",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:479",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:482",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:482",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:489",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:489",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:497",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:497",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:504",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:504",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:511",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:511",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:518",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:518",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:525",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:525",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:532",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:532",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:539",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_string_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:539",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_formatting",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:72",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_formatting",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:73",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_formatting",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:74",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_formatting",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:77",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_formatting",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:80",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_formatting",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:83",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_formatting",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:87",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_formatting",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:88",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_formatting",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:88",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:558",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:558",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:566",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:566",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:573",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:573",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:580",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:580",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:587",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:587",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:594",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:594",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:601",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:601",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:609",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:609",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:616",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:616",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:623",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:623",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:630",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:630",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:637",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:637",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:645",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:645",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:652",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:652",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:659",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:659",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:666",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:666",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:673",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:673",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:680",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:680",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:688",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:688",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:695",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:696",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:696",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:704",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:704",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:711",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:712",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:712",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:720",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:720",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:727",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_time_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:728",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_truncate",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:954",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:731",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:731",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:738",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:738",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:745",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:745",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:752",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:752",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:759",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:759",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:766",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:766",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:773",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:773",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:780",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:780",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:787",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:787",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:794",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:794",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:801",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:801",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:808",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:808",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:815",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:815",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:822",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:822",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:829",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:829",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:836",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:836",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:843",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:843",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:850",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:850",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:857",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:858",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:858",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:865",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:865",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:872",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_types",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:872",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unicodestring_sql",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:884",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unicodestring_sql",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:884",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:129",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:130",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:131",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:132",
+        "mechanism": "Validator.validate_identity"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:134",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:138",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:142",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:146",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:151",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_unix_functions",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:155",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_vector",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:962",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_vector",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:962",
+        "mechanism": "Validator.validate_all read"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_vector",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:972",
+        "mechanism": "Validator.validate_all"
+      },
+      {
+        "test_id": "tests/dialects/test_singlestore.py::TestSingleStore::test_vector",
+        "dialect": "singlestore",
+        "role": "parser",
+        "source": "tests/dialects/test_singlestore.py:972",
+        "mechanism": "Validator.validate_all read"
+      }
+    ],
+    "unresolved_count": 1,
+    "global_unresolved_count": 122,
+    "global_unresolved_kinds": {
+      "Computed dialect": 81,
+      "Computed dialect collection": 33,
+      "Dynamic import": 2,
+      "Unknown dialect asdfjasodiufjsd": 1,
+      "Unknown dialect fakedb": 2,
+      "Unknown dialect mydialect": 1,
+      "Unknown dialect myqsl": 1,
+      "Unknown dialect nonexistent": 1
+    },
+    "unresolved_kinds": {
+      "Unmodeled dispatch and indirect consumers have not been excluded": 1
+    },
+    "unresolved_reasons": [
+      "Unmodeled dispatch and indirect consumers have not been excluded"
+    ],
+    "fallback_required": true
+  }
+]
