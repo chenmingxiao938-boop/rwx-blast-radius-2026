@@ -1,8 +1,9 @@
+import ast
 import difflib
 import unittest
 
 from impact_selector import PINNED_COMMIT, analyze_patch
-from method_boundary import method_body_symbol, requires_structural_fallback
+from method_boundary import _outside_body, method_body_symbol, requires_structural_fallback
 from patch_parser import parse_patch
 
 
@@ -31,6 +32,19 @@ def classify(old, new, pinned=None):
 
 
 class MethodBoundaryTests(unittest.TestCase):
+    def test_body_mask_preserves_original_and_other_syntax(self):
+        source = ("@decorate\nclass A(Parent):\n"
+                  "    @trace\n    async def m(self, arg=1):\n"
+                  "        def nested():\n            return arg\n"
+                  "        return nested()\n    def sibling(self):\n        return 2\n"
+                  "class B:\n    def m(self):\n        return 3\n")
+        tree = ast.parse(source)
+        snapshot = ast.dump(tree, include_attributes=True)
+        expected = source.replace("        def nested():\n            return arg\n"
+                                  "        return nested()\n", "        pass\n")
+        self.assertEqual(_outside_body(tree, ("A", "m")), ast.dump(ast.parse(expected)))
+        self.assertEqual(ast.dump(tree, include_attributes=True), snapshot)
+
     def test_body_replacement_and_first_body_comment(self):
         changed = SOURCE.replace("x + 1", "x + 2")
         self.assertEqual(classify(SOURCE, changed), "A.m")

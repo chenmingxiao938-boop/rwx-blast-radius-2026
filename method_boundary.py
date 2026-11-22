@@ -56,12 +56,18 @@ def _methods(tree: ast.Module) -> dict[tuple[str, str], ast.FunctionDef | ast.As
 
 
 def _outside_body(tree: ast.Module, key: tuple[str, str]) -> str:
-    clone = copy.deepcopy(tree)
-    for cls in clone.body:
+    clone = copy.copy(tree)
+    clone.body = list(tree.body)
+    for class_index, cls in enumerate(tree.body):
         if isinstance(cls, ast.ClassDef) and cls.name == key[0]:
-            for node in cls.body:
+            masked_class = copy.copy(cls)
+            masked_class.body = list(cls.body)
+            clone.body[class_index] = masked_class
+            for method_index, node in enumerate(cls.body):
                 if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name == key[1]:
-                    node.body = [ast.Pass()]
+                    masked_method = copy.copy(node)
+                    masked_method.body = [ast.Pass()]
+                    masked_class.body[method_index] = masked_method
     return ast.dump(clone, include_attributes=False)
 
 
