@@ -62,12 +62,15 @@ def main():
     dependencies = read_gzip("dependency-map.json.gz")
     snapshot = (read_gzip("source_snapshot.json.gz")
                 if needs_source_snapshot(method_mode, mixed_mode) else None)
+    shared_map = (json.loads((APP / "shared_fixture_map.json").read_text(encoding="utf-8"))
+                  if fixture_safety_mode == "shared_loader" else None)
     schedules = {}
     for patch in sorted((DATA / "commits").glob("*.patch")):
         patch_text = patch.read_text(encoding="utf-8")
         options = dict(fixture_mode=fixture_mode, method_mode=method_mode,
                        source_snapshot=snapshot,
-                       fixture_safety_mode=fixture_safety_mode)
+                       fixture_safety_mode=fixture_safety_mode,
+                       shared_fixture_map=shared_map)
         if mixed_mode == "comment_only_fixture":
             decision = analyze_mixed_patch(
                 patch_text, manifest, coverage, ranges, dependencies,

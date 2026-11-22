@@ -13,7 +13,7 @@ from patch_parser import FileChange, Hunk, parse_patch
 
 PINNED_COMMIT = "eb11aec4be8cb2122afe713a4816662c3f0fb2fa"
 FIXTURE_MODES = ("baseline", "aggressive_fixture_only")
-FIXTURE_SAFETY_MODES = ("current", "conservative", "targeted")
+FIXTURE_SAFETY_MODES = ("current", "conservative", "targeted", "shared_loader")
 METHOD_MODES = ("baseline", "ast_method_body")
 
 
@@ -158,7 +158,7 @@ def _eligible_fixture_only(patch, patch_text: str, manifest: dict, coverage: dic
             return False
         readers = coverage["fixture_reads"].get(path)
         if _fixture_evidence_issues(
-            readers, manifest, inspect_observations=fixture_safety_mode == "targeted"
+            readers, manifest, inspect_observations=fixture_safety_mode in ("targeted", "shared_loader")
         ):
             return False
     return True
@@ -167,11 +167,14 @@ def _eligible_fixture_only(patch, patch_text: str, manifest: dict, coverage: dic
 def analyze_patch(patch_text: str, manifest: dict, coverage: dict, ranges: dict,
                   dependencies: dict, *, fixture_mode: str = "baseline",
                   method_mode: str = "baseline", source_snapshot: dict | None = None,
-                  fixture_safety_mode: str = "current") -> Decision:
+                  fixture_safety_mode: str = "current", shared_fixture_map: dict | None = None) -> Decision:
     if fixture_mode not in FIXTURE_MODES:
         raise ValueError(f"unknown fixture mode: {fixture_mode}")
     if fixture_safety_mode not in FIXTURE_SAFETY_MODES:
         raise ValueError(f"unknown fixture safety mode: {fixture_safety_mode}")
+    if fixture_safety_mode == "shared_loader" and (shared_fixture_map is None or
+            shared_fixture_map.get("pinned_commit") != PINNED_COMMIT):
+        raise ValueError("shared loader map is not from the pinned commit")
     if method_mode not in METHOD_MODES:
         raise ValueError(f"unknown method mode: {method_mode}")
     if method_mode == "ast_method_body" and (source_snapshot is None or
@@ -248,7 +251,7 @@ def analyze_patch(patch_text: str, manifest: dict, coverage: dict, ranges: dict,
                 readers = {}
             if fixture_safety_mode == "conservative":
                 fallback.add(f"conservative_fixture_handling:{path}")
-            elif fixture_safety_mode == "targeted":
+            elif fixture_safety_mode in ("targeted", "shared_loader"):
                 for issue in _fixture_evidence_issues(
                     readers, manifest, inspect_observations=True
                 ):
@@ -263,6 +266,19 @@ def analyze_patch(patch_text: str, manifest: dict, coverage: dict, ranges: dict,
             for reader in resolution.ambiguous:
                 fallback.add(f"fixture_reader_ambiguous:{path}:{reader}")
             add(resolution.numbers, f"observed_fixture_read:{path}")
+            if aggressive_fixture and fixture_safety_mode == "shared_loader":
+                cohorts = shared_fixture_map["file_cohorts"]
+                initializers = shared_fixture_map["initializers"]
+                unresolved_files = set(shared_fixture_map["unresolved_files"])
+                by_number = {test["number"]: test["file"] for test in tests}
+                for number in resolution.numbers:
+                    reader_file = by_number[number]
+                    if reader_file in unresolved_files:
+                        fallback.add(f"shared_loader_unresolved:{reader_file}")
+                    elif reader_file not in cohorts and path not in initializers:
+                        fallback.add(f"shared_loader_no_entrypoint:{reader_file}")
+                    add(cohorts.get(reader_file, ()), f"shared_loader_cohort:{reader_file}")
+                add(initializers.get(path, ()), f"shared_loader_initializer:{path}")
             if aggressive_fixture:
                 uncertainties.add(f"aggressive_fixture_only_observed_readers_may_be_incomplete:{path}")
             else:
