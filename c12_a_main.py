@@ -9,9 +9,29 @@ import c10_experiment as c10
 from c11a_select import capture_rank, choose
 from c11b_evidence import scoped_evidence
 from c11b_policy import prune
-from c12_noop import assess_patch
+from c12_noop import _plain_comment_edit, assess_patch
 from patch_parser import parse_patch
 from selector import best_schedule
+
+
+def _eligible_for_assessment(parsed):
+    """Necessary conditions for the full assessment to allow zero tests."""
+    if parsed.unknown or not parsed.files or len(parsed.changed_paths) != len(parsed.files):
+        return False
+    for change in parsed.files:
+        path = change.new_path
+        if (change.kind != "modified" or change.old_path != path or not path
+                or not path.startswith("sqlglot/") or not path.endswith(".py")
+                or not change.hunks or change.unknown_reason or not _plain_comment_edit(change)[0]):
+            return False
+    return True
+
+
+def _should_select_zero(parsed, raw, mandatory, reasons, sources, test_sources, graph):
+    if mandatory or reasons or not _eligible_for_assessment(parsed):
+        return False
+    assessment = assess_patch(parsed, sources, test_sources, graph, patch_text=raw)
+    return assessment["zero_candidate"]
 
 
 def main():
@@ -41,8 +61,8 @@ def main():
             selected, _ = prune(selected, mandatory, ranking, scoped, experiment.tests, risks,
                                 parsed, lambda ns: schedule(ns)[1])
 
-        assessment = assess_patch(parsed, experiment.source_files, experiment.test_sources, graph, patch_text=raw)
-        if assessment["zero_candidate"] and not mandatory and not reasons:
+        if _should_select_zero(parsed, raw, mandatory, reasons, experiment.source_files,
+                               experiment.test_sources, graph):
             selected = set()
         if not mandatory.issubset(selected):
             raise ValueError("C12-A lost a mandatory test")
