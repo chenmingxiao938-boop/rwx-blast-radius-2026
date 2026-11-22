@@ -10,6 +10,7 @@ import sys
 import time
 
 from impact_selector import FIXTURE_MODES, METHOD_MODES, analyze_patch
+from mixed_patch_impact import MIXED_MODES, analyze_mixed_patch
 from selector import best_schedule
 
 DATA = Path("/data")
@@ -34,6 +35,9 @@ def main():
     method_mode = os.environ.get("V5_METHOD_MODE", "baseline")
     if method_mode not in METHOD_MODES:
         raise ValueError(f"unknown method mode: {method_mode}")
+    mixed_mode = os.environ.get("V5_MIXED_MODE", "baseline")
+    if mixed_mode not in MIXED_MODES:
+        raise ValueError(f"unknown mixed mode: {mixed_mode}")
     manifest = json.loads((DATA / "tests.json").read_text(encoding="utf-8"))
     tests = manifest["tests"]
     coverage = read_gzip(COVERAGE_INDEXES[coverage_mode])
@@ -42,9 +46,16 @@ def main():
     snapshot = read_gzip("source_snapshot.json.gz") if method_mode == "ast_method_body" else None
     schedules = {}
     for patch in sorted((DATA / "commits").glob("*.patch")):
-        decision = analyze_patch(patch.read_text(encoding="utf-8"), manifest, coverage,
-                                 ranges, dependencies, fixture_mode=fixture_mode,
-                                 method_mode=method_mode, source_snapshot=snapshot)
+        patch_text = patch.read_text(encoding="utf-8")
+        options = dict(fixture_mode=fixture_mode, method_mode=method_mode,
+                       source_snapshot=snapshot)
+        if mixed_mode == "comment_only_fixture":
+            decision = analyze_mixed_patch(
+                patch_text, manifest, coverage, ranges, dependencies,
+                baseline_analyze=analyze_patch, **options)
+        else:
+            decision = analyze_patch(patch_text, manifest, coverage, ranges,
+                                     dependencies, **options)
         selected = decision.test_numbers
         if selected not in schedules:
             chosen = [tests[number] for number in selected]
@@ -54,6 +65,7 @@ def main():
         print(json.dumps({"commit": patch.stem, "fixture_mode": fixture_mode,
                           "coverage_mode": coverage_mode,
                           "method_mode": method_mode,
+                          "mixed_mode": mixed_mode,
                           "candidate_count": len(selected),
                           "selected_duration_ms": sum(math.floor(tests[n]["seconds"] * 1000 + 0.5)
                                                       for n in selected),
