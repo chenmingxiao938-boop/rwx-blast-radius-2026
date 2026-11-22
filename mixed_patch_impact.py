@@ -55,13 +55,15 @@ def is_comment_only(change: FileChange, source: str) -> bool:
 
 def analyze_mixed_patch(patch_text, manifest, coverage, ranges, dependencies, *,
                         baseline_analyze, fixture_mode="baseline", method_mode="baseline",
-                        source_snapshot=None) -> Decision:
+                        source_snapshot=None, fixture_safety_mode="current") -> Decision:
     """Run V5 unchanged, then optionally narrow a verified mixed fallback.
 
     Enabling this wrapper accepts the same observed-reader limitations as
     V5's fixture-only mode, plus the residual risk of source introspection.
     """
-    options = dict(fixture_mode=fixture_mode, method_mode=method_mode, source_snapshot=source_snapshot)
+    options = dict(fixture_mode=fixture_mode, method_mode=method_mode,
+                   source_snapshot=source_snapshot,
+                   fixture_safety_mode=fixture_safety_mode)
     baseline = baseline_analyze(patch_text, manifest, coverage, ranges, dependencies, **options)
     if (not baseline.fallback_required or fixture_mode != "aggressive_fixture_only"
             or not source_snapshot or source_snapshot.get("pinned_commit") != PINNED_COMMIT

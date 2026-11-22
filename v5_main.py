@@ -9,7 +9,7 @@ import resource
 import sys
 import time
 
-from impact_selector import FIXTURE_MODES, METHOD_MODES, analyze_patch
+from impact_selector import FIXTURE_MODES, FIXTURE_SAFETY_MODES, METHOD_MODES, analyze_patch
 from mixed_patch_impact import MIXED_MODES, analyze_mixed_patch
 from selector import best_schedule
 
@@ -43,6 +43,9 @@ def main():
     fixture_mode = os.environ.get("V5_FIXTURE_MODE", "baseline")
     if fixture_mode not in FIXTURE_MODES:
         raise ValueError(f"unknown fixture mode: {fixture_mode}")
+    fixture_safety_mode = os.environ.get("V5_FIXTURE_SAFETY_MODE", "current")
+    if fixture_safety_mode not in FIXTURE_SAFETY_MODES:
+        raise ValueError(f"unknown fixture safety mode: {fixture_safety_mode}")
     coverage_mode = os.environ.get("V5_COVERAGE_MODE", "baseline")
     if coverage_mode not in COVERAGE_INDEXES:
         raise ValueError(f"unknown coverage mode: {coverage_mode}")
@@ -63,7 +66,8 @@ def main():
     for patch in sorted((DATA / "commits").glob("*.patch")):
         patch_text = patch.read_text(encoding="utf-8")
         options = dict(fixture_mode=fixture_mode, method_mode=method_mode,
-                       source_snapshot=snapshot)
+                       source_snapshot=snapshot,
+                       fixture_safety_mode=fixture_safety_mode)
         if mixed_mode == "comment_only_fixture":
             decision = analyze_mixed_patch(
                 patch_text, manifest, coverage, ranges, dependencies,
@@ -78,6 +82,7 @@ def main():
         workers, cost = schedules[selected]
         print(json.dumps({"commit": patch.stem, "workers": workers}, separators=(",", ":")))
         print(json.dumps({"commit": patch.stem, "fixture_mode": fixture_mode,
+                          "fixture_safety_mode": fixture_safety_mode,
                           "coverage_mode": coverage_mode,
                           "method_mode": method_mode,
                           "ast_method_selection": ast_selection_mode,

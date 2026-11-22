@@ -13,6 +13,7 @@ from patch_parser import FileChange, Hunk, parse_patch
 
 PINNED_COMMIT = "eb11aec4be8cb2122afe713a4816662c3f0fb2fa"
 FIXTURE_MODES = ("baseline", "aggressive_fixture_only")
+FIXTURE_SAFETY_MODES = ("current", "conservative", "targeted")
 METHOD_MODES = ("baseline", "ast_method_body")
 
 
@@ -112,7 +113,39 @@ def _structural_change(change: FileChange) -> bool:
     return False
 
 
-def _eligible_fixture_only(patch, patch_text: str, manifest: dict, coverage: dict) -> bool:
+def _fixture_evidence_issues(readers, manifest: dict, *, inspect_observations: bool) -> tuple[str, ...]:
+    """Return path-local evidence defects; global coverage warnings have no fixture provenance."""
+    if not isinstance(readers, dict) or not readers:
+        return ("reader_map_missing",)
+    resolution = resolve_fixture_readers(readers, manifest)
+    issues = set()
+    if not resolution.numbers:
+        issues.add("no_resolved_readers")
+    if resolution.unresolved:
+        issues.add("unresolved_reader_ids")
+    if resolution.ambiguous:
+        issues.add("ambiguous_reader_ids")
+    if resolution.collection_seen:
+        issues.add("collection_read")
+    if inspect_observations:
+        for reader, observations in sorted(readers.items(), key=lambda item: str(item[0])):
+            if reader == "collection":
+                continue
+            if not isinstance(observations, list) or not observations:
+                issues.add(f"reader_evidence_missing:{reader}")
+                continue
+            if any(
+                not isinstance(item, (list, tuple))
+                or len(item) != 2
+                or not all(isinstance(part, str) and part for part in item)
+                for item in observations
+            ):
+                issues.add(f"reader_evidence_malformed:{reader}")
+    return tuple(sorted(issues))
+
+
+def _eligible_fixture_only(patch, patch_text: str, manifest: dict, coverage: dict,
+                           fixture_safety_mode: str) -> bool:
     if (patch.unknown or not patch.files
             or any(line.startswith(("old mode ", "new mode "))
                    for line in patch_text.splitlines())):
@@ -124,20 +157,21 @@ def _eligible_fixture_only(patch, patch_text: str, manifest: dict, coverage: dic
                 or not path.startswith("tests/fixtures/") or not path.endswith(".sql")):
             return False
         readers = coverage["fixture_reads"].get(path)
-        if not readers:
-            return False
-        resolution = resolve_fixture_readers(readers, manifest)
-        if (not resolution.numbers or resolution.unresolved or resolution.ambiguous
-                or resolution.collection_seen):
+        if _fixture_evidence_issues(
+            readers, manifest, inspect_observations=fixture_safety_mode == "targeted"
+        ):
             return False
     return True
 
 
 def analyze_patch(patch_text: str, manifest: dict, coverage: dict, ranges: dict,
                   dependencies: dict, *, fixture_mode: str = "baseline",
-                  method_mode: str = "baseline", source_snapshot: dict | None = None) -> Decision:
+                  method_mode: str = "baseline", source_snapshot: dict | None = None,
+                  fixture_safety_mode: str = "current") -> Decision:
     if fixture_mode not in FIXTURE_MODES:
         raise ValueError(f"unknown fixture mode: {fixture_mode}")
+    if fixture_safety_mode not in FIXTURE_SAFETY_MODES:
+        raise ValueError(f"unknown fixture safety mode: {fixture_safety_mode}")
     if method_mode not in METHOD_MODES:
         raise ValueError(f"unknown method mode: {method_mode}")
     if method_mode == "ast_method_body" and (source_snapshot is None or
@@ -174,8 +208,13 @@ def analyze_patch(patch_text: str, manifest: dict, coverage: dict, ranges: dict,
                     any(line.startswith(("old mode ", "new mode "))
                         for line in patch_text.splitlines())):
                 method_risk = True
-    aggressive_fixture = (fixture_mode == "aggressive_fixture_only"
-                          and _eligible_fixture_only(patch, patch_text, manifest, coverage))
+    aggressive_fixture = (
+        fixture_mode == "aggressive_fixture_only"
+        and fixture_safety_mode != "conservative"
+        and _eligible_fixture_only(
+            patch, patch_text, manifest, coverage, fixture_safety_mode
+        )
+    )
     candidates: set[int] = set()
     evidence: dict[int, set[str]] = {}
     uncertainties = {"observed_coverage_does_not_prove_absent_dependencies",
@@ -205,6 +244,15 @@ def analyze_patch(patch_text: str, manifest: dict, coverage: dict, ranges: dict,
                 fallback.add(f"unsupported_fixture:{path}")
                 continue
             readers = coverage["fixture_reads"].get(path, {})
+            if not isinstance(readers, dict):
+                readers = {}
+            if fixture_safety_mode == "conservative":
+                fallback.add(f"conservative_fixture_handling:{path}")
+            elif fixture_safety_mode == "targeted":
+                for issue in _fixture_evidence_issues(
+                    readers, manifest, inspect_observations=True
+                ):
+                    fallback.add(f"targeted_fixture_incompleteness:{path}:{issue}")
             resolution = resolve_fixture_readers(readers, manifest)
             if not readers or not resolution.numbers:
                 fallback.add(f"fixture_reader_unresolved:{path}")

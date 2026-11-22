@@ -28,12 +28,15 @@ class ImpactSelectorTests(unittest.TestCase):
                                                        ["Foo.method", 2, 5, 2, "method"]]}}
         self.graph = {"commit": PINNED_COMMIT, "direct_dependencies": {}}
 
-    def analyze(self, text):
-        return analyze_patch(text, self.manifest, self.coverage, self.ranges, self.graph)
+    def analyze(self, text, fixture_mode="baseline", fixture_safety_mode="current"):
+        return analyze_patch(
+            text, self.manifest, self.coverage, self.ranges, self.graph,
+            fixture_mode=fixture_mode, fixture_safety_mode=fixture_safety_mode,
+        )
 
-    def aggressive(self, text):
-        return analyze_patch(text, self.manifest, self.coverage, self.ranges, self.graph,
-                             fixture_mode="aggressive_fixture_only")
+    def aggressive(self, text, fixture_safety_mode="current"):
+        return self.analyze(text, fixture_mode="aggressive_fixture_only",
+                            fixture_safety_mode=fixture_safety_mode)
 
     def test_method_body_uses_positive_coverage(self):
         result = self.analyze(edit("sqlglot/foo.py"))
@@ -188,6 +191,54 @@ class ImpactSelectorTests(unittest.TestCase):
         self.coverage["fixture_reads"]["tests/fixtures/a.sql"] = {raw: [], "test:" + raw: []}
         self.assertEqual(self.aggressive(edit("tests/fixtures/a.sql")).test_numbers, (1,))
 
+    def test_conservative_mode_full_suite_for_fixture_changes(self):
+        result = self.aggressive(edit("tests/fixtures/a.sql"), "conservative")
+        self.assertEqual(result.test_numbers, (0, 1))
+        self.assertTrue(result.fallback_required)
+        self.assertIn("conservative_fixture_handling:tests/fixtures/a.sql",
+                      result.fallback_reasons)
+
+    def test_targeted_mode_keeps_complete_path_local_evidence(self):
+        self.coverage["unresolved"] = [
+            "coverage_observation_is_not_dependency_completeness",
+            "subprocess_and_native_code_coverage_not_attributed_to_parent_test",
+        ]
+        result = self.aggressive(edit("tests/fixtures/a.sql"), "targeted")
+        self.assertEqual(result.test_numbers, (1,))
+        self.assertFalse(result.fallback_required)
+
+    def test_targeted_mode_falls_back_on_missing_reader_observation(self):
+        self.coverage["fixture_reads"]["tests/fixtures/a.sql"] = {
+            "test:tests/test_b.py::B::test_two": []
+        }
+        current = self.aggressive(edit("tests/fixtures/a.sql"), "current")
+        targeted = self.aggressive(edit("tests/fixtures/a.sql"), "targeted")
+        self.assertEqual(current.test_numbers, (1,))
+        self.assertFalse(current.fallback_required)
+        self.assertEqual(targeted.test_numbers, (0, 1))
+        self.assertTrue(targeted.fallback_required)
+        self.assertIn(
+            "targeted_fixture_incompleteness:tests/fixtures/a.sql:"
+            "reader_evidence_missing:test:tests/test_b.py::B::test_two",
+            targeted.fallback_reasons,
+        )
+
+    def test_targeted_mode_falls_back_on_malformed_reader_observation(self):
+        self.coverage["fixture_reads"]["tests/fixtures/a.sql"] = {
+            "test:tests/test_b.py::B::test_two": [["builtins.open", ""]]
+        }
+        result = self.aggressive(edit("tests/fixtures/a.sql"), "targeted")
+        self.assertEqual(result.test_numbers, (0, 1))
+        self.assertTrue(result.fallback_required)
+        self.assertTrue(any(
+            reason.startswith("targeted_fixture_incompleteness:tests/fixtures/a.sql:"
+                              "reader_evidence_malformed:")
+            for reason in result.fallback_reasons
+        ))
+
+    def test_unknown_fixture_safety_mode_is_rejected(self):
+        with self.assertRaises(ValueError):
+            self.aggressive(edit("tests/fixtures/a.sql"), "unknown")
     def test_aggressive_missing_reader_and_unknown_fixture_fall_back(self):
         for path in ("tests/fixtures/missing.sql", "tests/fixtures/a.txt"):
             with self.subTest(path=path):

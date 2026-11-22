@@ -33,13 +33,15 @@ class MixedPatchTests(unittest.TestCase):
         ]}
         self.coverage = {"pinned_commit": PINNED_COMMIT, "manifest_count": 2,
                          "missing_ids": [], "extra_ids": [], "pytest_exit_code": 0,
-                         "fixture_reads": {"tests/fixtures/demo.sql": {"test:" + NODE_ID: 1}}}
+                         "fixture_reads": {"tests/fixtures/demo.sql": {"test:" + NODE_ID:
+                                            [["builtins.open", "tests/helpers.py:44"]]}}}
 
-    def analyze(self, patch, mode="aggressive_fixture_only", method_mode="ast_method_body"):
+    def analyze(self, patch, mode="aggressive_fixture_only", method_mode="ast_method_body", safety="current"):
         return analyze_mixed_patch(
             patch, self.manifest, self.coverage, {"pinned_commit": PINNED_COMMIT, "symbols": {}},
             {"commit": PINNED_COMMIT, "direct_dependencies": {}}, baseline_analyze=analyze_patch,
             fixture_mode=mode, method_mode=method_mode, source_snapshot=self.snapshot,
+            fixture_safety_mode=safety,
         )
 
     def test_comment_and_resolved_fixture_narrow_in_experiment(self):
@@ -54,6 +56,33 @@ class MixedPatchTests(unittest.TestCase):
         self.assertTrue(any("comment_only_source_positions_or_introspection" in message
                             for message in result.uncertainty))
 
+    def test_conservative_mode_keeps_mixed_fixture_patch_full_suite(self):
+        result = self.analyze(
+            PYTHON_CHANGE + FIXTURE_CHANGE, method_mode="baseline", safety="conservative"
+        )
+        self.assertEqual(result.test_numbers, (0, 1))
+        self.assertTrue(result.fallback_required)
+        self.assertIn("conservative_fixture_handling:tests/fixtures/demo.sql",
+                      result.fallback_reasons)
+
+    def test_targeted_mode_keeps_mixed_patch_when_evidence_is_complete(self):
+        result = self.analyze(
+            PYTHON_CHANGE + FIXTURE_CHANGE, method_mode="baseline", safety="targeted"
+        )
+        self.assertEqual(result.test_numbers, (0,))
+        self.assertFalse(result.fallback_required)
+
+    def test_targeted_mode_falls_back_for_mixed_patch_with_missing_evidence(self):
+        self.coverage["fixture_reads"]["tests/fixtures/demo.sql"]["test:" + NODE_ID] = []
+        result = self.analyze(
+            PYTHON_CHANGE + FIXTURE_CHANGE, method_mode="baseline", safety="targeted"
+        )
+        self.assertEqual(result.test_numbers, (0, 1))
+        self.assertTrue(result.fallback_required)
+        self.assertTrue(any(
+            reason.startswith("targeted_fixture_incompleteness:tests/fixtures/demo.sql:")
+            for reason in result.fallback_reasons
+        ))
     def test_baseline_fixture_policy_preserves_full_suite(self):
         self.assertTrue(self.analyze(PYTHON_CHANGE + FIXTURE_CHANGE, "baseline").fallback_required)
 

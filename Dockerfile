@@ -3,6 +3,7 @@
 # decide which sqlglot tests run, so keep it if your image runs them.
 FROM python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
 ENV V5_FIXTURE_MODE=aggressive_fixture_only \
+    V5_FIXTURE_SAFETY_MODE=conservative \
     V5_COVERAGE_MODE=subprocess \
     V5_METHOD_MODE=ast_method_body \
     V5_AST_METHOD_SELECTION=disabled \
