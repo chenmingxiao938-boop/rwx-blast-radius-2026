@@ -35,17 +35,24 @@ class MixedPatchTests(unittest.TestCase):
                          "missing_ids": [], "extra_ids": [], "pytest_exit_code": 0,
                          "fixture_reads": {"tests/fixtures/demo.sql": {"test:" + NODE_ID: 1}}}
 
-    def analyze(self, patch, mode="aggressive_fixture_only"):
+    def analyze(self, patch, mode="aggressive_fixture_only", method_mode="ast_method_body"):
         return analyze_mixed_patch(
             patch, self.manifest, self.coverage, {"pinned_commit": PINNED_COMMIT, "symbols": {}},
             {"commit": PINNED_COMMIT, "direct_dependencies": {}}, baseline_analyze=analyze_patch,
-            fixture_mode=mode, method_mode="ast_method_body", source_snapshot=self.snapshot,
+            fixture_mode=mode, method_mode=method_mode, source_snapshot=self.snapshot,
         )
 
     def test_comment_and_resolved_fixture_narrow_in_experiment(self):
         result = self.analyze(PYTHON_CHANGE + FIXTURE_CHANGE)
         self.assertEqual(result.test_numbers, (0,))
         self.assertTrue(any("introspection" in message for message in result.uncertainty))
+
+    def test_disabling_ast_method_selection_keeps_mixed_optimization(self):
+        result = self.analyze(PYTHON_CHANGE + FIXTURE_CHANGE, method_mode="baseline")
+        self.assertEqual(result.test_numbers, (0,))
+        self.assertFalse(result.fallback_required)
+        self.assertTrue(any("comment_only_source_positions_or_introspection" in message
+                            for message in result.uncertainty))
 
     def test_baseline_fixture_policy_preserves_full_suite(self):
         self.assertTrue(self.analyze(PYTHON_CHANGE + FIXTURE_CHANGE, "baseline").fallback_required)

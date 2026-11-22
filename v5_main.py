@@ -17,6 +17,20 @@ DATA = Path("/data")
 APP = Path("/app")
 COVERAGE_INDEXES = {"baseline": "coverage_index.json.gz",
                     "subprocess": "coverage_index_b31.json.gz"}
+AST_SELECTION_MODES = ("enabled", "disabled")
+
+
+def resolve_method_mode(configured_mode: str, ast_selection_mode: str) -> str:
+    """Allow an ablation to disable only method-level selection."""
+    if configured_mode not in METHOD_MODES:
+        raise ValueError(f"unknown method mode: {configured_mode}")
+    if ast_selection_mode not in AST_SELECTION_MODES:
+        raise ValueError(f"unknown AST selection mode: {ast_selection_mode}")
+    return configured_mode if ast_selection_mode == "enabled" else "baseline"
+
+
+def needs_source_snapshot(method_mode: str, mixed_mode: str) -> bool:
+    return method_mode == "ast_method_body" or mixed_mode == "comment_only_fixture"
 
 
 def read_gzip(name):
@@ -32,9 +46,9 @@ def main():
     coverage_mode = os.environ.get("V5_COVERAGE_MODE", "baseline")
     if coverage_mode not in COVERAGE_INDEXES:
         raise ValueError(f"unknown coverage mode: {coverage_mode}")
-    method_mode = os.environ.get("V5_METHOD_MODE", "baseline")
-    if method_mode not in METHOD_MODES:
-        raise ValueError(f"unknown method mode: {method_mode}")
+    configured_method_mode = os.environ.get("V5_METHOD_MODE", "baseline")
+    ast_selection_mode = os.environ.get("V5_AST_METHOD_SELECTION", "enabled")
+    method_mode = resolve_method_mode(configured_method_mode, ast_selection_mode)
     mixed_mode = os.environ.get("V5_MIXED_MODE", "baseline")
     if mixed_mode not in MIXED_MODES:
         raise ValueError(f"unknown mixed mode: {mixed_mode}")
@@ -43,7 +57,8 @@ def main():
     coverage = read_gzip(COVERAGE_INDEXES[coverage_mode])
     ranges = read_gzip("source_ranges.json.gz")
     dependencies = read_gzip("dependency-map.json.gz")
-    snapshot = read_gzip("source_snapshot.json.gz") if method_mode == "ast_method_body" else None
+    snapshot = (read_gzip("source_snapshot.json.gz")
+                if needs_source_snapshot(method_mode, mixed_mode) else None)
     schedules = {}
     for patch in sorted((DATA / "commits").glob("*.patch")):
         patch_text = patch.read_text(encoding="utf-8")
@@ -65,6 +80,7 @@ def main():
         print(json.dumps({"commit": patch.stem, "fixture_mode": fixture_mode,
                           "coverage_mode": coverage_mode,
                           "method_mode": method_mode,
+                          "ast_method_selection": ast_selection_mode,
                           "mixed_mode": mixed_mode,
                           "candidate_count": len(selected),
                           "selected_duration_ms": sum(math.floor(tests[n]["seconds"] * 1000 + 0.5)
