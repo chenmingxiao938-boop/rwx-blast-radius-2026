@@ -6,3 +6,5 @@ __pycache__/
 *.log
 output.jsonl
 sample/
+**/answers.json
+c10*_runs/
